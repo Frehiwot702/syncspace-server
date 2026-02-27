@@ -12,6 +12,7 @@ export const initSockets = (io: Server): void => {
 
     // Join channel/group room to share the same data within the group like live message update, user status (on/offline) and who is currently typing
     socket.on("join_channel", (channelId: string) => {
+      console.log('join channel with id: ',channelId)
       socket.join(channelId);
     });
 

@@ -30,7 +30,9 @@ const server = http.createServer(app);
 
 export const io = new Server(server, {
   cors: {
-    origin: "https://syncspace-client-masters.vercel.app"
+    origin: "https://syncspace-client-masters.vercel.app",
+    methods: ["POST", "GET", "PATCH"],
+    allowedHeaders: ['Content-Type', 'Authorization']
   }
 });
 
