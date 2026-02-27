@@ -21,7 +21,10 @@ router.post('/login', async (req: Request, res: Response) => {
 
         user.status = "online";
         user.save();
-        // io.emit("status_change_online", user._id);
+        io.emit("status_update", {
+            userId: user._id, 
+            status: "online"
+        });
         
         console.log('user status when logged in: ', user.status);
 
@@ -44,7 +47,11 @@ router.post('/logout', async (req: Request, res: Response) => {
 
         user.status = "offline";
         user.save();
-        // io.emit("status_change_offline", user._id);
+        io.emit("status_update", {
+            userId: user._id, 
+            status: "offline"
+        });
+        
         console.log('user status when logged out: ', user.status);
 
         res.status(200).json({user});
