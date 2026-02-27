@@ -2,7 +2,6 @@
 
 import { Router, Request, Response } from "express";
 import Channel from "../models/channel";
-import Workspace from "../models/workspace";
 
 const router = Router();
 

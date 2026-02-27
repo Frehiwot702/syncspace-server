@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import Workspace from "../models/workspace";
+import Workspace from "../models/Workspace";
 
 const router = Router();
 
